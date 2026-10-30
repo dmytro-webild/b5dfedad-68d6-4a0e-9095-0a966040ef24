@@ -7,102 +7,62 @@ import { StyleProvider } from "@/components/ui/StyleProvider";
 
 export default function Layout() {
   const navItems = [
-  {
-    "name": "About",
-    "href": "#about"
-  },
-  {
-    "name": "Services",
-    "href": "#services"
-  },
-  {
-    "name": "Portfolio",
-    "href": "#portfolio"
-  },
-  {
-    "name": "FAQ",
-    "href": "#faq"
-  },
-  {
-    "name": "Hero",
-    "href": "#hero"
-  },
-  {
-    "name": "Testimonials",
-    "href": "#testimonials"
-  },
-  {
-    "name": "Metrics",
-    "href": "#metrics"
-  }
-];
+    { name: "Home", href: "#hero" },
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Showcase", href: "#portfolio" },
+    { name: "Google Reviews", href: "#testimonials" },
+    { name: "Highlights", href: "#metrics" },
+    { name: "FAQ", href: "#faq" },
+    { name: "Contact & Location", href: "#contact" },
+  ];
 
   return (
     <StyleProvider buttonVariant="shift" siteBackground="noise" heroBackground="gradientBars">
       <SiteBackgroundSlot />
       <SectionErrorBoundary name="navbar">
         <NavbarFullscreenStatic
-      logo="MIRACLE AUTO DETAILING"
-      ctaButton={{
-        text: "Book Now",
-        href: "#contact",
-      }}
-     navItems={navItems} />
+          logo="MIRACLE AUTO DETAILING"
+          ctaButton={{
+            text: "WhatsApp 012-493 6447",
+            href: "https://wa.me/60124936447",
+          }}
+          navItems={navItems}
+        />
       </SectionErrorBoundary>
       <main className="flex-grow">
         <Outlet />
       </main>
       <SectionErrorBoundary name="footer">
         <FooterSimple
-      brand="MIRACLE AUTO DETAILING"
-      columns={[
-        {
-          title: "Navigation",
-          items: [
+          brand="MIRACLE AUTO DETAILING"
+          columns={[
             {
-              label: "About Us",
-              href: "#about",
+              title: "Navigation",
+              items: [
+                { label: "About Us", href: "#about" },
+                { label: "Services", href: "#services" },
+                { label: "Showcase Portfolio", href: "#portfolio" },
+                { label: "Google Reviews (5.0 ★)", href: "#testimonials" },
+                { label: "Contact & Location", href: "#contact" },
+              ],
             },
             {
-              label: "Services",
-              href: "#services",
+              title: "Bukit Mertajam Studio",
+              items: [
+                { label: "Lot 861, Permatang Pasir, Kampung Kota, 14000 Bukit Mertajam, Penang", href: "https://maps.google.com/?q=Lot+861,+Permatang+Pasir,+Kampung+Kota,+14000+Bukit+Mertajam,+Penang" },
+                { label: "Phone: 012-493 6447", href: "tel:0124936447" },
+                { label: "Hours: 10:00 AM – 10:00 PM Daily", href: "#contact" },
+                { label: "Plus Code: CCGQ+6M Bukit Mertajam", href: "#contact" },
+              ],
             },
-            {
-              label: "Portfolio",
-              href: "#portfolio",
-            },
-            {
-              label: "Contact",
-              href: "#contact",
-            },
-          ],
-        },
-        {
-          title: "Legal",
-          items: [
-            {
-              label: "Privacy Policy",
-              href: "#",
-            },
-            {
-              label: "Terms of Service",
-              href: "#",
-            },
-          ],
-        },
-      ]}
-      copyright="© 2024 Miracle Auto Detailing. All rights reserved."
-      links={[
-        {
-          label: "Instagram",
-          href: "#",
-        },
-        {
-          label: "Facebook",
-          href: "#",
-        },
-      ]}
-    />
+          ]}
+          copyright="© 2026 Miracle Auto Detailing. All rights reserved. Lot 861, Permatang Pasir, 14000 Bukit Mertajam, Penang."
+          links={[
+            { label: "WhatsApp: 012-493 6447", href: "https://wa.me/60124936447" },
+            { label: "Google Maps Location", href: "https://maps.google.com/?q=Lot+861,+Permatang+Pasir,+Kampung+Kota,+14000+Bukit+Mertajam,+Penang" },
+          ]}
+        />
       </SectionErrorBoundary>
     </StyleProvider>
   );
